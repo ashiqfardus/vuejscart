@@ -1,11 +1,14 @@
 <template>
   <div id="app">
+
+
 <!--    Navbar here -->
     <navbar @search="search"></navbar>
 
     <div class="container-fluid">
       <div class="row">
-        <product @newItemAdded="addItem" :items="items"></product>
+        <router-view></router-view>
+<!--        <product @newItemAdded="addItem" :items="items"></product>-->
         <cart @itemRemoved="itemRemove" :items="cart"></cart>
 
       </div>
@@ -23,7 +26,7 @@ import 'popper.js'
 import  data from'./data.js'
 import Navbar from './components/Navbar'
 import Cart from './components/Cart'
-import Product from './components/Product'
+import Product from './components/views/Product'
 export default {
   components:
       {
